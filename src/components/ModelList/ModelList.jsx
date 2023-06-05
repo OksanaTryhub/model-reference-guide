@@ -1,13 +1,28 @@
-import React from 'react'
-import ModelCard from '../ModelCard/ModelCard'
+import React from "react";
+import PropTypes from "prop-types";
 
-const ModelList = ({data}) => {
+import ModelCard from "../ModelCard/ModelCard";
+import styles from "./modelList.module.css";
+
+const ModelList = ({ data }) => {
   return (
-    <div>
-        <h1>ModelList</h1>
-        {}
+    <div className={styles.modelList}>
+      {!data.length && <p>There are no models</p>}
+      {data.length &&
+        data.map(({ id, name, info, photo }) => <ModelCard key={id} id={id} name={name} info={info} photo={photo} />)}
     </div>
-  )
-}
+  );
+};
 
-export default ModelList
+ModelList.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      info: PropTypes.string,
+      photo: PropTypes.string,
+    })
+  ).isRequired,
+};
+
+export default ModelList;

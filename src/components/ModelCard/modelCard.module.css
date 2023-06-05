@@ -1,0 +1,25 @@
+.model {
+  display: flex;
+  flex-direction: column;
+}
+
+.infoWrap {
+  display: flex;
+  padding: 10px 50px;
+  white-space: pre-wrap;
+  text-align: start;
+}
+
+.name {
+}
+
+.info {
+}
+
+.modelImage {
+  width: 300px;
+}
+
+.noImage {
+  width: 300px;
+}
