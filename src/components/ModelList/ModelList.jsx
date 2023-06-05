@@ -1,8 +1,12 @@
 import React from 'react'
+import ModelCard from '../ModelCard/ModelCard'
 
-const ModelList = () => {
+const ModelList = ({data}) => {
   return (
-    <div>ModelList</div>
+    <div>
+        <h1>ModelList</h1>
+        {}
+    </div>
   )
 }
 
