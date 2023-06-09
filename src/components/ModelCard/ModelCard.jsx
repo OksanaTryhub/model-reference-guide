@@ -3,8 +3,7 @@ import placeholder from "../../images/noImage.png";
 
 import styles from "./modelCard.module.css";
 
-const ModelCard = ({ name, info, photo }) => {
-  console.log(info);
+const ModelCard = ({ name, info, photo }) => { 
   return (
     <div className={styles.model}>
       <h2 className={styles.modelName}>{name}</h2>
