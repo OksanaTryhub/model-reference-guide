@@ -24,9 +24,7 @@ setShowModal(false);
     <div className={styles.model}>
       <h2 className={styles.modelName}>{name}</h2>
       <div className={styles.infoWrap}>
-        <div>
-          <p className={styles.modelInfo}>{info}</p>
-        </div>
+       
         {/* <div>
             <img src={sketch} alt={name} className={styles.sketch} onClick = {showBigSketch}/>
         </div> */}
@@ -44,9 +42,14 @@ setShowModal(false);
                         <h2 className={styles.titleModal}>Are you sure you want to delete <b>“{name }”</b>?<br /></h2>
                         <p className={styles.textModal}>You can`t undo this action.</p>
                     </div> */}
+                     <div className={styles.modalContent}>
                      <div>
-            <img src={largePhoto} alt={name} onClick = {showBigSketch}/>
-        </div>
+                        <img src={largePhoto} alt={name} onClick = {showBigSketch} className={styles.modelImage}/>
+                    </div>
+                    <div className={styles.modalInfo}>
+                      <p className={styles.modelInfo}>{info}</p>
+                    </div>
+                     </div>
                     {/* <div className={styles.buttonWrap}> 
                         <button onClick={handleCloseModal} className={`${styles.modalBtn} ${styles.cancelBtn}`}>Cancel</button>
                         <button onClick = {handleClick} className={`${styles.modalBtn} ${styles.approveBtn}`}>

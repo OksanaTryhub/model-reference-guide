@@ -29,3 +29,16 @@
 .noImage {
   width: 300px;
 }
+
+.modalContent {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.modelImage{
+  width: 400px;
+}
+.modalInfo{
+  width: 300px;
+}
