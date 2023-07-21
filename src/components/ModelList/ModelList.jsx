@@ -9,7 +9,15 @@ const ModelList = ({ data }) => {
     <div className={styles.modelList}>
       {!data.length && <p>There are no models</p>}
       {data.length &&
-        data.map(({ id, name, info, photo }) => <ModelCard key={id} id={id} name={name} info={info} photo={photo} />)}
+        data.map(({ id, name, info, photo, sketchName, sketchPath }) => <ModelCard 
+        key={id} 
+        id={id} 
+        name={name} 
+        info={info} 
+        photo={photo} 
+        sketchName={sketchName}
+        sketchPath={sketchPath} 
+        />)}
     </div>
   );
 };
@@ -21,6 +29,8 @@ ModelList.propTypes = {
       name: PropTypes.string.isRequired,
       info: PropTypes.string,
       photo: PropTypes.string,
+      sketchName: PropTypes.string,
+      sketchPath: PropTypes.string,
     })
   ).isRequired,
 };
