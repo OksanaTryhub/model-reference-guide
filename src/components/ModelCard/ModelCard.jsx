@@ -1,9 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import placeholder from "../../images/noImage.png";
+import ModalWindow from "../ModalWindow/ModalWindow";
+// import sketch from "../../images/girl.jpg"
 
 import styles from "./modelCard.module.css";
 
-const ModelCard = ({ name, info, photo, sketchPath, sketchName }) => { 
+const ModelCard = ({ name, info, photo, largePhoto }) => { 
+  const [showModal, setShowModal] = useState(false);
+
+//   const handleClick = () => {
+//     setShowModal(false);
+// }
+
+const showBigSketch = () => {
+    setShowModal(true);
+};
+
+ const handleCloseModal = () => {
+setShowModal(false);
+};
+  
   return (
     <div className={styles.model}>
       <h2 className={styles.modelName}>{name}</h2>
@@ -11,21 +27,35 @@ const ModelCard = ({ name, info, photo, sketchPath, sketchName }) => {
         <div>
           <p className={styles.modelInfo}>{info}</p>
         </div>
-        <div>
-          {sketchPath? (
-            <img src={sketchPath} alt={sketchName} className={styles.modelImage} />
-          ): (
-            <img src={placeholder} alt='' className={styles.noImage} />
-          )}
-        </div>
+        {/* <div>
+            <img src={sketch} alt={name} className={styles.sketch} onClick = {showBigSketch}/>
+        </div> */}
         <div>
           {photo ? (
-            <img src={photo} alt={name} className={styles.modelImage} />
+            <img src={photo} alt={name} className={styles.modelImage} onClick = {showBigSketch}/>
           ) : (
             <img src={placeholder} alt='' className={styles.noImage} />
           )}
         </div>
       </div>
+      {showModal && (
+                <ModalWindow onClose={handleCloseModal} >
+                    {/* <div className={styles.textWrap}>
+                        <h2 className={styles.titleModal}>Are you sure you want to delete <b>“{name }”</b>?<br /></h2>
+                        <p className={styles.textModal}>You can`t undo this action.</p>
+                    </div> */}
+                     <div>
+            <img src={largePhoto} alt={name} onClick = {showBigSketch}/>
+        </div>
+                    {/* <div className={styles.buttonWrap}> 
+                        <button onClick={handleCloseModal} className={`${styles.modalBtn} ${styles.cancelBtn}`}>Cancel</button>
+                        <button onClick = {handleClick} className={`${styles.modalBtn} ${styles.approveBtn}`}>
+                            Yes
+                            <TrashIcon id='svg' className={styles.trashIconModal}/>
+                        </button>
+                    </div> */}
+                </ModalWindow>
+            )}
     </div>
   );
 };

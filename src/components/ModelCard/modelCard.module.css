@@ -16,8 +16,14 @@
 .info {
 }
 
-.modelImage {
+.modelImage{
   width: 300px;
+   cursor: pointer;
+}
+
+.sketch {
+  width: 150px;
+  cursor: pointer;
 }
 
 .noImage {
